@@ -7,13 +7,14 @@ import {
 } from 'wagmi';
 import contractInterface from '../contract-abi.json';
 
+const CONTRACT_ADDRESS = '<CONTRACT ADDRESS>'
 
 function Mint() {
   const [count, setCount] = useState<number>(1);
   const { isConnected } = useAccount();
 
   const { config } = usePrepareContractWrite({
-    address: '0x5741d31f664865fF7c41De6956Af65849BfC93eA',
+    address: CONTRACT_ADDRESS,
     abi: contractInterface,
     functionName: 'mint',
     args: [count]
