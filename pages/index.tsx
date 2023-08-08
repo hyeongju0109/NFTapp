@@ -42,7 +42,7 @@ const Home: NextPage = () => {
         </div>
         <footer className='absolute bottom-0 flex flex-row items-center py-4 h-24'>
           <span className='mx-2 text-[#AFEEEE]'>|</span>
-          <a className='text-[#AFEEEE] hover:text-[hotpink]' target="_blank" rel="noreferrer">My test</a>
+          <a className='text-[#AFEEEE] hover:text-[hotpink]' target="_blank" rel="noreferrer">modified by hj_kim</a>
           <span className='mx-2 text-[#AFEEEE]'>|</span>
         </footer>
       </main>
