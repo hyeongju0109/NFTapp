@@ -10,7 +10,7 @@ import {
 } from 'wagmi/chains';
 
 const ALCHEMY_API = '<YOUR_API_KEY>'
-const WALLETCONNECT_API = '<YOUR_API_KEY>'
+const WALLETCONNECT_PROJECT_ID = '<YOUR_API_KEY>'
 const { chains, publicClient } = configureChains(
   [
     goerli
@@ -25,7 +25,7 @@ const { chains, publicClient } = configureChains(
 
 const { connectors } = getDefaultWallets({
   appName: 'RainbowKit App',
-  projectId: WALLETCONNECT_API,
+  projectId: WALLETCONNECT_PROJECT_ID,
   chains,
 });
 
