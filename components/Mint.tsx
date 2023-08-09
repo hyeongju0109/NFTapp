@@ -5,7 +5,7 @@ import {
   usePrepareContractWrite,
   useWaitForTransaction
 } from 'wagmi';
-import contractInterface from '../myabi.json';
+import contractInterface from '../contract-abi.json';
 
 
 const CONTRACT_ADDRESS = '0x2f7BBdCD6937C80A1A1f5a616DB0F689b7453af2'
