@@ -5,24 +5,25 @@ import {
   usePrepareContractWrite,
   useWaitForTransaction
 } from 'wagmi';
-import contractInterface from '../contract-abi.json';
+import contractInterface from '../myabi.json';
 
-const CONTRACT_ADDRESS = '<CONTRACT ADDRESS>'
+
+const CONTRACT_ADDRESS = '0x2f7BBdCD6937C80A1A1f5a616DB0F689b7453af2'
+const tokenURI = 'ipfs://QmTzLuXGUE5Jjv4uzCsL42JDE3C1GMDWVAoh2sHQBGRQeE/'
 
 function Mint() {
-  const [count, setCount] = useState<number>(1);
   const { isConnected } = useAccount();
 
   const { config } = usePrepareContractWrite({
     address: CONTRACT_ADDRESS,
     abi: contractInterface,
-    functionName: 'mint',
-    args: [count]
+    functionName: 'safeMint',
+    args: [tokenURI]
   });
 
   const {
     data: mintData,
-    write: mint,
+    write: mintNFT,
     isLoading: isMintLoading,
     isSuccess: isMintStarted,
     error: mintError,
@@ -36,14 +37,15 @@ function Mint() {
   });
 
 
+
   const isMinted = txSuccess;
 
   return (
     <div className='flex flex-col items-center order-2 sm:order-1'>
       <button
         className={`w-80 hover:bg-[#44EEEE] active:bg-[#44EEEE] disabled:bg-gray-300 py-2 px-8 mb-4 rounded-lg text-xl font-bold ${isMintStarted || isMintLoading || isMinted ? "bg-[#44EEEE]" : "bg-[#AFEEEE]"}`}
-        disabled={!mint || !isConnected}
-        onClick={() => mint?.()}
+        disabled={!mintNFT || !isConnected}
+        onClick={() => mintNFT?.()}
       >
         {isMintLoading && 'Confirming in wallet'}
         {isMintStarted && !isMinted && 'Minting...'}
