@@ -3,9 +3,10 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Mint from '../components/Mint';
 import Image from 'next/image';
-import nftimage from './image/creeper1.png';
+import {CID} from '../components/Mint'
 
 const Home: NextPage = () => {
+  const CIDimage = `https://ipfs.io/ipfs/${CID}`
 
   return (
     <div className=''>
@@ -27,12 +28,12 @@ const Home: NextPage = () => {
             <div className="flip order-1 sm:order-2 mb-8 sm:mb-0">
               <div className="flip-content">
                 <div className="flip-front">
-                  <Image src= {nftimage} />
+                <Image src={CIDimage} width={200} height={200}/>
                 </div>
                 <div className="flip-back">
                   <div className='w-[200px] h-[200px] cursor-pointer bg-blue-400 pt-8 px-3 border border-white'>
                     <p className='text-white text-sm '>
-                      This image will be minted : creeper1
+                      This image will be minted.
                     </p>
                   </div>
                 </div>
