@@ -3,10 +3,10 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Mint from '../components/Mint';
 import Image from 'next/image';
-import {CID} from '../components/Mint'
+import {imageCID} from '../components/Mint'
 
 const Home: NextPage = () => {
-  const CIDimage = `https://ipfs.io/ipfs/${CID}`
+  const CIDimage = `https://ipfs.io/ipfs/${imageCID}/`
 
   return (
     <div className=''>
