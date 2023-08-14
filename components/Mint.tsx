@@ -8,10 +8,15 @@ import contractInterface from '../contract-abi.json';
 
 const CONTRACT_ADDRESS = '0xD5FcEFA67EfA7214f8f10358DFA6dF7f0Ccab38E'
 
-export const CID: string = 'QmbtreJiGpGaftPAd1aWSSqtyFCMe48ZXJqdtY81BT63EH/'
-const tokenURI = `ipfs://${CID}`
+// CID of image file
+export const imageCID: string = '<YOUR_IMAGE_CID>'
+
+// CID of JSON ifle
+const jsonCID = '<YOUR_JSON_CID>'
+
 
 function Mint() {
+  const tokenURI = `ipfs://${jsonCID}/`
   const { isConnected } = useAccount();
 
   const { config } = usePrepareContractWrite({
