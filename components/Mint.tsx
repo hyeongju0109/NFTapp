@@ -8,8 +8,8 @@ import {
 import contractInterface from '../contract-abi.json';
 
 
-const CONTRACT_ADDRESS = '0x2f7BBdCD6937C80A1A1f5a616DB0F689b7453af2'
-const tokenURI = 'ipfs://QmTzLuXGUE5Jjv4uzCsL42JDE3C1GMDWVAoh2sHQBGRQeE/'
+const CONTRACT_ADDRESS = '0xD5FcEFA67EfA7214f8f10358DFA6dF7f0Ccab38E'
+const tokenURI = 'ipfs://<metadata URI>/'
 
 function Mint() {
   const { isConnected } = useAccount();
