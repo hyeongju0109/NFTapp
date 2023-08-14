@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { 
   useAccount,
   useContractWrite,
@@ -7,9 +6,10 @@ import {
 } from 'wagmi';
 import contractInterface from '../contract-abi.json';
 
-
 const CONTRACT_ADDRESS = '0xD5FcEFA67EfA7214f8f10358DFA6dF7f0Ccab38E'
-const tokenURI = 'ipfs://<metadata URI>/'
+
+export const CID: string = 'QmbtreJiGpGaftPAd1aWSSqtyFCMe48ZXJqdtY81BT63EH/'
+const tokenURI = `ipfs://${CID}`
 
 function Mint() {
   const { isConnected } = useAccount();
